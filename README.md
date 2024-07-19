@@ -84,6 +84,38 @@ Run the simulations:
 
 ## Step 2 - Run the SCM demos using pychrono
 
+Create a directory to build Pychrono software and go to it:
+
+```mkdir build_py```
+
+```cd build_py```
+
+Build Pychrono in this directory:
+
+```ccmake ../chrono```
+
+Configure it, open the ```ENABLE_MODULE_PYTHON```, ```ENABLE_MODULE_VEHICLE``` and generate them. Compile the demos using:
+
+```make -j 12```
+
+Copy the SCM demos into the bin directory:
+
+```cd ..```
+
+```cp dem_scm_calibration_scripts/Demos/SCM_demos/. build_py/bin/```
+
+Run the SCM simulation under the bin directory:
+
+```cd build_py```
+
+```cd bin```
+
+```python3 Rover_test.py```
+
+```python3 singleWheelTestUsingAllSixCalibratedPara.py```
+
+
+
 
 
 
