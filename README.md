@@ -11,7 +11,7 @@ We ran the DEM demos using NVIDIA RTX 4090 GPU, ran SCM demos using Intel 14900K
 The calculation process were all accomplished on a linux system.
 
 
-## Step 1 - Clone Chrono and scripts for the paper, then build Chrono software and run DEM simulation
+## Step 1 - Clone Chrono and scripts for the paper, then build Chrono software and run DEM simulation，containing the plate sinkage test, annulus shear test, 3 types of single wheel test and the full rover test
 
 Create a work directory in your home directory like below: 
 
@@ -81,8 +81,28 @@ Run the simulations:
 
 ```./simulation.sh```
 
+## Step 2 - Run the calibration demos to calibrate the six parameters for the SCM  model
 
-## Step 2 - Run the SCM demos using pychrono
+Copy the "plt demos" into the "Figure" directory for convinience:
+
+```cp dem_scm_calibration_scripts/Demos/plt_demos/. dem_scm_calibration_scripts/Figure/```
+
+Locally use a python software (like Anaconda) to run the demos:
+
+First run the demo ```Annulus.py``` and ```Sinkage.py```, the copy the data in the new texts created in   and      into the demo...
+
+
+
+
+
+
+
+
+
+
+
+
+## Step 3 - Run the SCM demos using pychrono
 
 Create a directory to build Pychrono software and go to it:
 
