@@ -112,7 +112,7 @@ Run the SCM simulation under the bin directory:
 
 ```python3 Rover_test.py```
 
-```python3 singleWheelTestUsingAllSixCalibratedPara.py```
+```python3 Singlewheel.py```
 
 
 
