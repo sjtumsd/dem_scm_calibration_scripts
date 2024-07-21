@@ -89,18 +89,9 @@ Copy the "plt demos" into the "Figure" directory for convinience:
 
 Locally use a python software (like Anaconda) to run the demos:
 
-First run the demo ```Annulus.py``` and ```Sinkage.py```, the copy the data in the new texts created in   and      into the demo...
+First run the demo ```Sinkage.py``` and ```Annulus.py```, copy the data in ```01_plot_plate_sinkage/plate_selected_force_sinkage_points_dem.txt``` and ```02_plot_annulus_shear/annulus_selected_torque_points_for_each_load.txt``` into demo ```Sinkage_parameter.py```, ```Annulus_parameter.py``` and ```K_s.py``` in order to calibrate the six parameters. We are supposed to change the number of chains in the 3 demos just mentioned above so that the calibration would be more accurate. Then, use the calibrated parameters in ```Sinkage.py``` and ```Annulus.py``` so that we can get the comparison figure between DEM and SCM.
 
-
-
-
-
-
-
-
-
-
-
+According to the ncfiles created by the Pymc3 software, we can optimize the figures by running ```plot.py```
 
 ## Step 3 - Run the SCM demos using pychrono
 
@@ -134,6 +125,11 @@ Run the SCM simulation under the bin directory:
 
 ```python3 Singlewheel.py```
 
+## Step 4 - Draw the singlewheel test/full rover test results 
+
+Copy the data calculated using SCM into demos ```Singlewheel_test.py``` and ```Rover_new.py``` ...
+
+Thus, by running the demos ```Singlewheel_test.py``` and ```Rover_new.py```, we can gain the singlewheel comparison figure and the full rover comparison figure.
 
 
 
