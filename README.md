@@ -89,13 +89,21 @@ Copy the "plt demos" into the "Figure" directory for convinience:
 
 Locally use a python software (like Anaconda) to run the demos:
 
-First run the demo ```Sinkage.py``` and ```Annulus.py```, copy the data in ```01_plot_plate_sinkage/plate_selected_force_sinkage_points_dem.txt``` and ```02_plot_annulus_shear/annulus_selected_torque_points_for_each_load.txt``` into demo ```Sinkage_parameter.py```, ```Annulus_parameter.py``` and ```K_s.py``` in order to calibrate the six parameters. 
+First run the demo ```Sinkage.py``` and ```Annulus.py```, copy the data in ```01_plot_plate_sinkage/plate_selected_force_sinkage_points_dem.txt```， ```02_plot_annulus_shear/annulus_max_torque_vs_load_dem_vs_scm.txt``` and ```02_plot_annulus_shear/annulus_selected_torque_points_for_each_load.txt``` into demo ```Sinkage_parameter.py```, ```Annulus_parameter.py``` and ```K_s.py``` seperately. 
 
-We are supposed to change the number of chains in the 3 demos just mentioned above so that the calibration would be more accurate. 
+Then run the three demos to calibrate the six parameters. 
 
-Then, use the calibrated parameters in ```Sinkage.py``` and ```Annulus.py``` so that we can get the comparison figure between DEM and SCM.
+We are supposed to change the number of chains in the 3 demos in line 87, 71, 91 so that the calibration would be more accurate with the growth of "nchains". 
 
-According to the ncfiles created by the Pymc3 software, we can optimize the figures by running ```plot.py```
+Then, write the calibrated parameters into ```Sinkage.py``` and ```Annulus.py``` so that we can get the comparison figure between DEM and SCM.
+
+Run the demos ```Sinkage.py``` and ```Annulus.py``` again to gain the figures.
+
+Figures about absolute error of the SCM results compared with the DEM solution at 1 s, 2 s, and 3 s in demo ```Annulus.py``` requires us to change the "t" in line 112 from 1s to 2s and 3s.
+
+Follow the instructions in line 226, 233, 244, 262, 273.
+
+According to the ncfiles created by the Pymc3 software, we can optimize the figures by running ```plot.py```.
 
 ## Step 3 - Run the SCM demos using pychrono
 
