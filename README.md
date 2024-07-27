@@ -41,7 +41,7 @@ Build Chrono in this directory:
 
 Configure it, open the ```GPU_module``` and generate it. Compile the demos using:
 
-```make -j 12```
+```make -j```
 
 Update the json files and the obj files:
 
@@ -126,6 +126,8 @@ Copy the SCM demos into the bin directory:
 ```cd ..```
 
 ```cp dem_scm_calibration_scripts/Demos/SCM_demos/. build_py/bin/```
+
+Copy the six calibrated parameters into ```Singlewheel.py``` and ```Rover_test.py```
 
 Run the SCM simulation under the bin directory:
 
