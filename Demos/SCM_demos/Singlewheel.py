@@ -31,22 +31,26 @@ import time
 import math
 import random
 
-# Two different wheels
-for n in range(2):
+# Three different wheels
+for n in range(3):
     slip_hmmwv = [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8]
-    #slip_hmmwv = [0.0,  0.2,  0.4,  0.6,  0.8]
-    slip_viper = [0.0, 0.1, 0.15, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8]
+    slip_cylinder = [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8]
+    slip_rover = [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8]
 
     if n == 0:
         print("Run single wheel test for HMMWV wheel")
     if n == 1:
-        print("Run single wheel test for VIPER wheel")
+        print("Run single wheel test for Cylinder wheel")
+    if n == 1:
+        print("Run single wheel test for Rover wheel")
 
     slip = []
     if n == 0:
         slip = slip_hmmwv
     if n == 1:
-        slip = slip_viper
+        slip = slip_cylinder
+    if n == 2:
+        slip = slip_rover
 
     nSims = len(slip)
     print("Number of data is: ", nSims)
@@ -68,8 +72,8 @@ for n in range(2):
         chrono.SetChronoDataPath('/home/yueminzhang/zym/build_py/data/')
 
         # Parameters for wheel
-        wheel_rad = 0.25
-        if n == 1:
+        wheel_rad = 0.47
+        if n == 2:
             wheel_rad = 0.25
 
         # wheel_width = 0.293
@@ -82,8 +86,6 @@ for n in range(2):
         wheel_slip = slip[i]
 
         lin_vel = 1
-        if n == 1:
-            lin_vel = 0.25
 
         ang_vel = lin_vel / ( (1.0 - wheel_slip) * wheel_rad )
 
@@ -103,10 +105,11 @@ for n in range(2):
         # Load mesh
         mesh = chrono.ChTriangleMeshConnected()
         if n == 0:
-            #mesh.LoadWavefrontMesh(chrono.GetChronoDataFile('vehicle/hmmwv/cylinder_47.obj'))
-            mesh.LoadWavefrontMesh(chrono.GetChronoDataFile('vehicle/hmmwv/wheelcn.obj'))
+            mesh.LoadWavefrontMesh(chrono.GetChronoDataFile('vehicle/hmmwv/hmmwv_tire_fine.obj'))
         if n == 1:
-            mesh.LoadWavefrontMesh(chrono.GetChronoDataFile('robot/viper/obj/viper_wheel.obj'))
+            mesh.LoadWavefrontMesh(chrono.GetChronoDataFile('robot/viper/obj/cylinder_47.obj'))
+        if n == 1:
+            mesh.LoadWavefrontMesh(chrono.GetChronoDataFile('robot/viper/obj/rover_wheel.obj'))
         # mesh.LoadWavefrontMesh('wheel_10mm_grouser.obj')
         # mesh.LoadWavefrontMesh('hmmwv_tire_coarse_fine.obj')
         mesh.Transform(chrono.ChVectorD(0, 0, 0), chrono.ChMatrix33D(chrono.Q_from_AngZ(math.pi / 2)))  
@@ -188,8 +191,7 @@ for n in range(2):
 
         # Constant soil properties
         damping = 2e6
-        if n == 1:
-            damping = 1e6
+       
         terrain.SetSoilParameters(  235605,      # Bekker Kphi 0.2e6
                                     -4957,      # Bekker Kc 0
                                     0.883,        # Bekker n exponent 1.1
@@ -240,7 +242,11 @@ for n in range(2):
         np.savetxt(txt_pos + "DBP_Torque_vs_Slip_HMMWV_Wheel_SCM.txt", FT_Vs_Slip, delimiter=" ")
         np.savetxt(txt_pos + "Pos_Vel_vs_Time_HMMWV_Wheel_SCM.txt", PV_tot, delimiter=" ")
     if n == 1:
-        np.savetxt(txt_pos + "DBP_Torque_vs_Time_VIPER_Wheel_SCM.txt", FT_tot, delimiter=" ")
-        np.savetxt(txt_pos + "DBP_Torque_vs_Slip_VIPER_Wheel_SCM.txt", FT_Vs_Slip, delimiter=" ")
-        np.savetxt(txt_pos + "Pos_Vel_vs_Time_VIPER_Wheel_SCM.txt", PV_tot, delimiter=" ")
+        np.savetxt(txt_pos + "DBP_Torque_vs_Time_CYLINDER_Wheel_SCM.txt", FT_tot, delimiter=" ")
+        np.savetxt(txt_pos + "DBP_Torque_vs_Slip_CYLINDER_Wheel_SCM.txt", FT_Vs_Slip, delimiter=" ")
+        np.savetxt(txt_pos + "Pos_Vel_vs_Time_CYLINDER_Wheel_SCM.txt", PV_tot, delimiter=" ")
+    if n == 2:
+        np.savetxt(txt_pos + "DBP_Torque_vs_Time_ROVER_Wheel_SCM.txt", FT_tot, delimiter=" ")
+        np.savetxt(txt_pos + "DBP_Torque_vs_Slip_ROVER_Wheel_SCM.txt", FT_Vs_Slip, delimiter=" ")
+        np.savetxt(txt_pos + "Pos_Vel_vs_Time_ROVER_Wheel_SCM.txt", PV_tot, delimiter=" ")
  
