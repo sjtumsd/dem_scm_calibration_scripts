@@ -141,9 +141,13 @@ Run the SCM simulation under the bin directory:
 
 ## Step 4 - Draw the singlewheel test/full rover test results 
 
-Copy the data calculated using SCM into demos ```Singlewheel_test.py``` and ```Rover_new.py``` ...
+Copy the TXT files from ```py_demos/bin``` into ```dem_scm_calibration_scripts/Figure/04_plot_single_wheel/```
 
-Thus, by running the demos ```Singlewheel_test.py``` and ```Rover_new.py```, we can gain the singlewheel comparison figure and the full rover comparison figure.
+Run the ```Singlewheel_Test.py``` and change the ```HMMWV Wheel``` symbols to ```Cylinder Wheel``` and  ```Rover Wheel```, run the demo two more times
+
+Then copy the data calculated in  ```Rover_test.py``` using SCM into demo ```Rover_new.py```, the data were in the files ```Rover_DBP_Torque.txt``` and ```DBP_Torque_vs_Time_ROVER_Wheel_SCM.txt```
+
+By running the demo ```Rover_new.py```, we can gain the comparison figures.
 
 
 
