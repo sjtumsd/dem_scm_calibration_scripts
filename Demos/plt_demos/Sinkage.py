@@ -15,14 +15,14 @@ FigSize = [8, 6]
 Radii = [0.2, 0.3]
 plate_size = ["20cm", "30cm"]
 
-LableName = ["Plate speed = 0.25 cm/s", "Plate speed = 0.5 cm/s", "Plate speed = 1.0 cm/s", "Selected points"]
+LableName = ["Plate speed = 0.0025 m/s", "Plate speed = 0.005 m/s", "Plate speed = 0.01 m/s", "Selected points"]
 LineStyle = ["-.", "--", ":", "-"]
 Color = ["red", "cyan", "blue", "purple"]
 
 # dir0 = "/srv/home/whu59"
 # dir0 = "/home/whu59/research/server/euler"
 # dir1 = "/research/sbel/d_chrono_fsi_granular/chrono_3001"
-dir2 = "E:/GPU_FILE/Parameter_test/Plate_sinkage_test/"
+dir2 = "D:/dem_scm_calibration_scripts/Data collection/Plate_sinkage_test/"
 dir3 = [["r=20cm/v025", "r=30cm/v025"],
         ["r=20cm/v05", "r=30cm/v05"],
         ["r=20cm/v10", "r=30cm/v10"]]
@@ -160,7 +160,7 @@ for n in range(2):
     font = {'weight': Weight, 'size': fs}
     plt.rc('font', **font)
     FaceColor = 'w'
-    dir1 = "D:/HuaweiMoveData/Users/17908/Desktop/"
+    dir1 = "D:/HuaweiMoveData/Users/17908/Desktop//Data/py_deomos/01_plot_plate_sinkage/"
     #plt.plot(Force_Selected_Points_SCM[0][:],100.0*abs(Force_Selected_Points_SCM[1+n][:]-Force_Selected_Points_CRM[1+n][:])/Force_Selected_Points_CRM[1+n][:],label='Error Value',linewidth=1,color='b',marker='o',linestyle='--',
     #         markerfacecolor='blue',markersize=10)
     plt.plot(Force_Selected_Points_SCM[0][:], 100.0*abs(Force_Selected_Points_SCM[1+n][:]-Force_Selected_Points_CRM[1+n][:])/Force_Selected_Points_CRM[1+n][:], 
@@ -174,10 +174,60 @@ for n in range(2):
     
     
     
-    name='Sinkage_Error'+str(n+1)+'.png'
+    name='Relative_Sinkage_Error'+str(n+1)+'.png'
     plt.savefig(dir1 + name, facecolor = FaceColor, dpi = DPI)
 
     plt.show()
+##########################################################
+########################################################## 
+    if n == 0:
+        plt.figure(figsize = FigSize)
+        font = {'weight': Weight, 'size': fs}
+        plt.rc('font', **font)
+        FaceColor = 'w'
+        dir1 = "D:/HuaweiMoveData/Users/17908/Desktop//Data/py_deomos/01_plot_plate_sinkage/"
+        #plt.plot(Force_Selected_Points_SCM[0][:],100.0*abs(Force_Selected_Points_SCM[1+n][:]-Force_Selected_Points_CRM[1+n][:])/Force_Selected_Points_CRM[1+n][:],label='Error Value',linewidth=1,color='b',marker='o',linestyle='--',
+        #         markerfacecolor='blue',markersize=10)
+        plt.plot(Force_Selected_Points_SCM[0][:], abs(Force_Selected_Points_SCM[1+n][:]-Force_Selected_Points_CRM[1+n][:])/1000.0, 
+           'bp-.', lw = lw, markersize = ms, fillstyle='none', markeredgewidth = lw, label = str(0.2)+"m plate sinkage test")
+        plt.grid(linestyle = '--')
+        plt.xlabel('Sinkage(m)', fontsize = fs, weight = Weight)
+        plt.ylabel('Absolute Error (kN)', fontsize = fs, weight = Weight)
+        ax = plt.gca()
+        ax.set_xlim([0, 0.22])
+        ax.set_ylim([0, 0.16])
+        plt.title('')
+        plt.legend()
+    
+        name='Absolute_Sinkage_Error'+str(n+1)+'.png'
+        plt.savefig(dir1 + name, facecolor = FaceColor, dpi = DPI)
+    
+        plt.show()
+        
+    if n == 1:
+        plt.legend(loc='upper right')
+        plt.figure(figsize = FigSize)
+        font = {'weight': Weight, 'size': fs}
+        plt.rc('font', **font)
+        FaceColor = 'w'
+        dir1 = "D:/HuaweiMoveData/Users/17908/Desktop//Data/py_deomos/01_plot_plate_sinkage/"
+        #plt.plot(Force_Selected_Points_SCM[0][:],100.0*abs(Force_Selected_Points_SCM[1+n][:]-Force_Selected_Points_CRM[1+n][:])/Force_Selected_Points_CRM[1+n][:],label='Error Value',linewidth=1,color='b',marker='o',linestyle='--',
+        #         markerfacecolor='blue',markersize=10)
+        plt.plot(Force_Selected_Points_SCM[0][:], abs(Force_Selected_Points_SCM[1+n][:]-Force_Selected_Points_CRM[1+n][:])/1000.0, 
+           'bp-.', lw = lw, markersize = ms, fillstyle='none', markeredgewidth = lw, label = str(0.3)+"m plate sinkage test")
+        plt.grid(linestyle = '--')
+        plt.xlabel('Sinkage(m)', fontsize = fs, weight = Weight)
+        plt.ylabel('Absolute Error (kN)', fontsize = fs, weight = Weight)
+
+        plt.title('')
+        plt.legend()
+        ax = plt.gca()
+        ax.set_xlim([0, 0.22])
+        ax.set_ylim([0, 0.3])
+        name='Absolute_Sinkage_Error'+str(n+1)+'.png'
+        plt.savefig(dir1 + name, facecolor = FaceColor, dpi = DPI)
+    
+        plt.show()
 ##########################################################
 # Save the selected force at different sinkage
 selected_force = out_dir + "plate_selected_force_sinkage_points_scm.txt"

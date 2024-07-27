@@ -106,7 +106,7 @@ K_s = 'K_s'
 x_rescale = 1.0
 
 # Output setup
-out_dir = "DEMO_OUTPUT/Figure/python_scripts/nc_file/"
+out_dir = "nc_file/"
 direction = "new_1_para_Frictional_"
 num_chains = str(nchains) + "_chains_"
 num_steps = str(nsteps) + "_steps_"

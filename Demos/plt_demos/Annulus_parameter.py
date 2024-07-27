@@ -28,19 +28,19 @@ import math
 import random
 
 # =============================================================================
-# Annulus rotating on material, outer radius = 0.2, inner radius = 0.15
+# Annulus rotating on material, outer radius = 0.6, inner radius = 0.45
 # First column: mass (kg); Second column: max torque (Nm)
 # Torque is the average value at steady state
-# Data is in this file: 02_plot_annulus_shear/annulus_max_torque_vs_load_crm_vs_scm.txt
+# Data is in this file: 02_plot_annulus_shear/annulus_max_torque_vs_load_dem_vs_scm.txt
 obsData = np.array([
-    [  25.0 ,  4.664321247289424832e+01 ],
-    [  50.0 ,  1.033364101759027989e+02 ],
-    [  75.0 ,  1.537806343173573396e+02 ],
-    [ 100.0 ,  2.127979207455703090e+02 ],
-    [ 125.0 ,  2.670365343472280415e+02 ],
-    [ 150.0 ,  3.208526352890985436e+02 ],
-    [ 175.0 ,  3.571085313928040250e+02 ],
-    [ 200.0 ,  3.872368944482711299e+02 ]
+    [  25.0 ,  4.913120651825119012e+01 ],
+    [  50.0 ,  1.001448740741069940e+02 ],
+    [  75.0 ,  1.514463184769710153e+02 ],
+    [ 100.0 ,  2.028599507331143741e+02 ],
+    [ 125.0 ,  2.502864059440264271e+02 ],
+    [ 150.0 ,  3.033365099711554080e+02 ],
+    [ 175.0 ,  3.421941122182765298e+02 ],
+    [ 200.0 ,  3.870533359214929874e+02 ]
 ])
 # obsData = np.array([ # old data
 # [  25.0 ,  36.0 ],
@@ -87,7 +87,7 @@ phi = 'phi'
 x_rescale = [1.0, 1.0]
 
 # Output setup
-out_dir = "DEMO_OUTPUT/Figure/python_scripts/nc_file/"
+out_dir = "nc_file/"
 direction = "new_2_para_Frictional_"
 num_chains = str(nchains) + "_chains_"
 num_steps = str(nsteps) + "_steps_"
