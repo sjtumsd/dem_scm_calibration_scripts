@@ -49,7 +49,7 @@ Update the json files and the obj files:
 
 ```cp dem_scm_calibration_scripts/Demos/models/. build_GPU/data/models/```
 
-```cp dem_scm_calibration_scripts/Demos/json file/. build_BPU/data/gpu/```
+```cp dem_scm_calibration_scripts/Demos/json file/. build_GPU/data/gpu/```
 
 Copy the shell programs to the bin directory:
 
