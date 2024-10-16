@@ -91,7 +91,7 @@ Locally use a python software (like Anaconda) to run the demos:
 
 First run the demo ```Sinkage.py``` and ```Annulus.py```, copy the data in ```01_plot_plate_sinkage/plate_selected_force_sinkage_points_dem.txt```， ```02_plot_annulus_shear/annulus_max_torque_vs_load_dem_vs_scm.txt``` and ```02_plot_annulus_shear/annulus_selected_torque_points_for_each_load.txt``` into demo ```Sinkage_parameter.py```, ```Annulus_parameter.py``` and ```K_s.py``` seperately. 
 
-Then run the three demos to calibrate the six parameters. 
+Then run the three demos ```Sinkage_parameter.py```, ```Annulus_parameter.py``` and ```K_s.py``` to calibrate the six parameters. 
 
 We are supposed to change the number of chains in the 3 demos in line 87, 71, 91 so that the calibration would be more accurate with the growth of "nchains". 
 
