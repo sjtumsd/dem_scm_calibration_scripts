@@ -87,7 +87,7 @@ Copy the "plt demos" into the "Figure" directory for convinience:
 
 ```cp dem_scm_calibration_scripts/Demos/plt_demos/. dem_scm_calibration_scripts/Figure/```
 
-Locally use a python software (like Anaconda) to run the demos:
+Locally use a python software (like Anaconda) to run the demos(it is noted that we need first download a Pymc3 and activate into python):
 
 First run the demo ```Sinkage.py``` and ```Annulus.py```, copy the data in ```01_plot_plate_sinkage/plate_selected_force_sinkage_points_dem.txt```， ```02_plot_annulus_shear/annulus_max_torque_vs_load_dem_vs_scm.txt``` and ```02_plot_annulus_shear/annulus_selected_torque_points_for_each_load.txt``` into demo ```Sinkage_parameter.py```, ```Annulus_parameter.py``` and ```K_s.py``` seperately. 
 
