@@ -148,7 +148,7 @@ void runPlateDrop(ChSystemGpuMesh& gpu_sys, ChGpuSimulationParameters& params) {
     double wheel_radius = 47;
     //double scale_ratio = wheel_radius  / 0.47;
     double scale_ratio = 47;
-    double wheel_slip = 0.0;
+    double wheel_slip = 0.2;
     double linVel = 100;
     double angVel = linVel / (wheel_radius * (1.0 - wheel_slip));
     //double angVel = 0;
