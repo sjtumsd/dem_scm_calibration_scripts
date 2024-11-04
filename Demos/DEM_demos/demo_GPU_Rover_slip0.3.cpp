@@ -138,8 +138,8 @@ void Rover(ChSystemGpuMesh& gpu_sys, ChGpuSimulationParameters& params) {
 
     ChVector<> IniVel(0.0, 0.0, 0.0);
 
-    float wheel_mass = 50000;
-    float chassis_mass = 50000;
+    float wheel_mass = 17000;
+    float chassis_mass = 17000;
     bool verbose = true;
     bool actuator_on = true;
     
