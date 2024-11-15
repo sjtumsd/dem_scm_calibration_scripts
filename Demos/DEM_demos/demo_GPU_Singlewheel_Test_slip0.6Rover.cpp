@@ -9,7 +9,7 @@
 // http://projectchrono.org/license-chrono.txt.
 //
 // =============================================================================
-// Authors: Nic Olsen, Ruochun Zhang
+// Authors: Yuemin Zhang, Wei Hu
 // =============================================================================
 // Chrono::Gpu demo using SMC method. A body whose geometry is described by an
 // OBJ file is time-integrated in Chrono and interacts with a granular wave tank

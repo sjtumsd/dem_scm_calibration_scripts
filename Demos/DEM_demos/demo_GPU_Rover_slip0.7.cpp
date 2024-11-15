@@ -9,7 +9,7 @@
 // http://projectchrono.org/license-chrono.txt.
 //
 // =============================================================================
-// Authors: Nic Olsen, Ruochun Zhang
+// Authors: Yuemin Zhang, Wei Hu
 // =============================================================================
 // Chrono::Gpu demo using SMC method. A body whose geometry is described by an
 // OBJ file is time-integrated in Chrono and interacts with a granular wave tank
@@ -514,7 +514,7 @@ void Rover(ChSystemGpuMesh& gpu_sys, ChGpuSimulationParameters& params) {
     out_dir = out_dir + params.output_dir;
     filesystem::create_directory(filesystem::path(out_dir));
     
-    // Create oputput directories  ´´½¨Êä³öÄ¿Â¼
+    // Create oputput directories  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿Â¼
     if (!filesystem::create_subdirectory(filesystem::path(out_dir))) {
         std::cerr << "Error creating directory " << out_dir << std::endl;
     }
